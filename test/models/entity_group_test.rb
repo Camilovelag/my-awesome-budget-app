@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class GroupTest < ActiveSupport::TestCase
+class EntityGroupTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
