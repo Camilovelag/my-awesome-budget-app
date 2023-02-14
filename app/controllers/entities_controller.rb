@@ -1,6 +1,7 @@
 class EntitiesController < ApplicationController
   def index
-    @entities = Entity.where(author_id: current_user.id).order(created_at: :desc)
+    @entities = Entity.includes(:entity_groups).where(entity_groups: { group_id: params[:group_id] })
+    @entities.order(created_at: :desc)
   end
 
   def new
@@ -15,9 +16,10 @@ class EntitiesController < ApplicationController
     @groups_array = entity_group_params
     if @entity.save
       @groups_array.each do |group|
-        Entity_group.create(entity_id: @entity.id, group_id: group.id)
+        temp = EntityGroup.create(entity_id: @entity.id, group_id: group)
+        temp.save
       end
-      redirect_to entities_path, notice: 'Transaction successfully created!'
+      redirect_to group_entities_path(@groups_array.first), notice: 'Transaction successfully created!'
     else
       render :new
     end
@@ -30,6 +32,7 @@ class EntitiesController < ApplicationController
   end
 
   def entity_group_params
-    params.require(:entity_group).permit(group_ids: [])
+    @array = params.require(:entity_group).permit(group_id: [])
+    @array[:group_id].drop(1)
   end
 end
