@@ -8,7 +8,12 @@
     <div>
       <%= f.label :amount %>
       <%= f.number_field :amount, step: 0.01 %>
-      </div>
+    </div>
+    <div>
+      <%= fields_for @entity_group do |item| %>
+        <%= item.collection_check_boxes :group_id, @groups, :id, :name %>
+      <% end %>
+    </div>
     <div>
       <%= f.submit "Create" %>
     </div>
