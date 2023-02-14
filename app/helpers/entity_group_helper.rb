@@ -1,0 +1,2 @@
+module EntityGroupHelper
+end
