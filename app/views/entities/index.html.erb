@@ -1,1 +1,20 @@
-<h1>Transactions</h1>
+<main>
+  <h1>Transactions</h1>
+  <p>
+    Total ammount:
+    <%= total_amount(@entities) %>
+  <ul>
+    <% @entities.each do |entity| %>
+      <li>
+        <p>
+          <%= entity.name %>
+        </p>
+        <p>
+          <%= number_to_currency(entity.amount) %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+  <%= button_to 'Add a new transaction', new_entity_path, method: :get %>
+  <%= button_to '<', groups_path, method: :get %>
+</main>

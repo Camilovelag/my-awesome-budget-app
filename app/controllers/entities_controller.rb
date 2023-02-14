@@ -1,4 +1,8 @@
 class EntitiesController < ApplicationController
+  def index
+    @entities = Entity.where(author_id: current_user.id).order(created_at: :desc)
+  end
+
   def new
     @entity = Entity.new
   end
