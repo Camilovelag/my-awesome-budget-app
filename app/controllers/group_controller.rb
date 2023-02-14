@@ -1,4 +1,8 @@
 class GroupController < ApplicationController
+  def index
+    @groups = Group.where(user_id: current_user.id)
+  end
+
   def new
     @group = Group.new
   end
@@ -7,9 +11,9 @@ class GroupController < ApplicationController
     @group = Group.new(group_params)
     @group.user_id = current_user.id
     if @group.save
-      redirect_to group_index_path
+      redirect_to group_index_path, notice: 'New category added!'
     else
-      render :new
+      render :new, notice: 'Please, complete all the required fields'
     end
   end
 

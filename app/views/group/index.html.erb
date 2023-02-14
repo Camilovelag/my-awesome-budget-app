@@ -1,3 +1,14 @@
 <main>
   <h1>Categories</h1>
+  <ul>
+    <% @groups.each do |group| %>
+      <li>
+        <%= image_tag url_for(group.icon), class: 'img-thumbnail w-10' %>
+        <p>
+          <%= group.name %>
+        </p>
+      </li>
+    <% end %>
+  </ul>
+  <%= button_to 'Add a new group', new_group_path, method: :get %>
 </main>
