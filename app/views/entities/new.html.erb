@@ -1,13 +1,13 @@
 <main>
-  <h1>New Category</h1>
-  <%= form_with model: Group, url: group_index_path, method: :post, local: true do |f| %>
+  <h1>New Transaction</h1>
+  <%= form_with model: @entity, url: entities_path, method: :post, local: true do |f| %>
     <div>
       <%= f.label :name %>
       <%= f.text_field :name, placeholder: "name" %>
     </div>
     <div>
-      <%= f.label :icon %>
-      <%= f.file_field :icon %>
+      <%= f.label :amount %>
+      <%= f.number_field :amount, step: 0.01 %>
       </div>
     <div>
       <%= f.submit "Create" %>

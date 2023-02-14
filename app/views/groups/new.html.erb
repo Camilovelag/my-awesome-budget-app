@@ -1,0 +1,16 @@
+<main>
+  <h1>New Category</h1>
+  <%= form_with model: @group, url: groups_path, method: :post, local: true do |f| %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: "name" %>
+    </div>
+    <div>
+      <%= f.label :icon %>
+      <%= f.file_field :icon %>
+      </div>
+    <div>
+      <%= f.submit "Create" %>
+    </div>
+  <% end %>
+</main>
