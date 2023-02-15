@@ -1,4 +1,6 @@
 class EntitiesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @entities = Entity.includes(:entity_groups).where(entity_groups: { group_id: params[:group_id] },
                                                       author_id: current_user.id).order(created_at: :desc)
