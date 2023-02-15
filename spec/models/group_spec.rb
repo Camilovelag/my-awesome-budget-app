@@ -4,7 +4,7 @@ RSpec.describe Group, type: :model do
   context 'is created correctly' do
     before(:all) do
       @user = User.create(name: 'User', email: 'user@example.com', password: '123456')
-      @group = Group.create(name: 'Group', icon: 'https://www.icon.com', user_id: @user.id)
+      @group = Group.create(name: 'Group', icon: nil, user_id: @user.id)
     end
 
     it 'should have a name' do
@@ -12,7 +12,7 @@ RSpec.describe Group, type: :model do
     end
 
     it 'should have an icon url' do
-      expect(@group.icon).to eq('https://www.icon.com')
+      expect(@group.icon).to be_an_instance_of(ActiveStorage::Attached::One)
     end
 
     it 'should have an user' do
@@ -26,7 +26,7 @@ RSpec.describe Group, type: :model do
     end
 
     it 'if has no name' do
-      @group = Group.create(icon: 'https://www.icon.com', user_id: @user.id)
+      @group = Group.create(icon: nil, user_id: @user.id)
       expect(@group).to_not be_valid
     end
 
@@ -36,13 +36,13 @@ RSpec.describe Group, type: :model do
     end
 
     it 'if has no user' do
-      @group = Group.create(name: 'Group', icon: 'https://www.icon.com')
+      @group = Group.create(name: 'Group', icon: nil)
       expect(@group).to_not be_valid
     end
 
     it 'if name is longer than 250 chars' do
       group_name = 'a' * 251
-      @group = Group.create(name: group_name, icon: 'https://www.icon.com', user_id: @user.id)
+      @group = Group.create(name: group_name, icon: nil, user_id: @user.id)
       expect(@group).to_not be_valid
     end
   end
