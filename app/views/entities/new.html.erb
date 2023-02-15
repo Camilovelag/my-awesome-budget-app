@@ -1,6 +1,6 @@
 <main>
   <h1>New Transaction</h1>
-  <%= form_with model: @entity, url: entities_path, method: :post, local: true do |f| %>
+  <%= form_with model: @entity, url: group_entities_path, method: :post, local: true do |f| %>
     <div>
       <%= f.label :name %>
       <%= f.text_field :name, placeholder: "name" %>
@@ -11,11 +11,15 @@
     </div>
     <div>
       <%= fields_for @entity_group do |item| %>
-        <%= item.collection_check_boxes :group_id, @groups, :id, :name %>
+        <%= item.collection_check_boxes :group_id, @groups, :id, :name, {required: true} do |c| %>
+          <%= c.check_box %>
+          <%= c.label %>
+        <% end %>
       <% end %>
     </div>
     <div>
-      <%= f.submit "Create" %>
+      <%= f.submit "Save" %>
     </div>
   <% end %>
+  <%= button_to '<', group_entities_path(params[:group_id]), method: :get %>
 </main>

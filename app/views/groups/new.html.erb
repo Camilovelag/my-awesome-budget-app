@@ -10,7 +10,8 @@
       <%= f.file_field :icon %>
       </div>
     <div>
-      <%= f.submit "Create" %>
+      <%= f.submit "Save" %>
     </div>
   <% end %>
+  <%= button_to '<', groups_path, method: :get %>
 </main>

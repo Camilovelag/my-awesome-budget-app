@@ -4,11 +4,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   devise_for :users
 
-  root "splash#index"
+  root "groups#index"
 
   resources :groups do
-    resources :entities, only: [:index]
+    resources :entities
   end
-
-  resources :entities, except: [:index]
 end

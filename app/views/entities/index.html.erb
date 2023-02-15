@@ -2,7 +2,7 @@
   <h1>Transactions</h1>
   <p>
     Total ammount:
-    <%= total_amount(@entities) %>
+    <%= total_amount_per_transaction(@entities) %>
   </p>
   <ul>
     <% @entities.each do |entity| %>
@@ -16,6 +16,6 @@
       </li>
     <% end %>
   </ul>
-  <%= button_to 'Add a new transaction', new_entity_path, method: :get %>
+  <%= button_to 'Add a new transaction', new_group_entity_path, method: :get %>
   <%= button_to '<', groups_path, method: :get %>
 </main>

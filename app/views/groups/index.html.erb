@@ -8,9 +8,12 @@
           <p>
             <%= group.name %>
           </p>
+          <p>Total amount:
+            <%= total_amount_per_category(group) %>
+          </p>
         </li>
       <% end %>
     <% end %>
   </ul>
-  <%= button_to 'Add a new group', new_group_path, method: :get %>
+  <%= button_to 'Add a new category', new_group_path, method: :get %>
 </main>
