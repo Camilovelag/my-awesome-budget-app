@@ -2,13 +2,13 @@ module ApplicationHelper
   def page_title
     case [controller.controller_name, controller.action_name]
     when %w[groups new]
-      'new category'
+      'NEW CATEGORY'
     when %w[groups index]
-      'categories'
+      'CATEGORIES'
     when %w[entities new]
-      'new transaction'
+      'NEW TRANSACTION'
     when %w[entities index]
-      'transactions'
+      'TRANSACTIONS'
     end
   end
 end

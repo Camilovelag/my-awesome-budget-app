@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.feature 'Splash', type: :feature do
-  describe 'page' do
+RSpec.describe 'Splash', type: :feature do
+  context 'page' do
     before(:each) do
       visit root_path
     end
