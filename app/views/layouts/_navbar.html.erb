@@ -1,0 +1,16 @@
+<nav>
+  <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+    <i class="bi bi-list"></i>
+  </button>
+  <h1>
+    <% if controller.action_name == 'new' %>
+      new
+      <%= 'category' if controller.controller_name == 'groups'  %>
+      <%= 'Transaction' if controller.controller_name == 'entities' %>
+    <% end %>
+    <% if controller.action_name == 'index' %>
+      <%= 'categories' if controller.controller_name == 'groups'  %>
+      <%= 'transactions' if controller.controller_name == 'entities' %>
+    <% end %>
+  </h1>
+</nav>

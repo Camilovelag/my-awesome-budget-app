@@ -6,7 +6,7 @@ Rails.application.routes.draw do
 
   root "groups#index"
 
-  resources :groups do
-    resources :entities
+  resources :groups, path: :categories  do
+    resources :entities, path: :transactions
   end
 end

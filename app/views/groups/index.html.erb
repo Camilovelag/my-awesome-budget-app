@@ -1,5 +1,4 @@
 <main>
-  <h1>Categories</h1>
   <ul>
     <% @groups.each do |group| %>
       <%= link_to group_entities_path(group.id), method: :post do %>
