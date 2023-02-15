@@ -2,11 +2,11 @@
   <%= form_with model: @group, url: groups_path, method: :post, local: true do |f| %>
     <div>
       <%= f.label :name %>
-      <%= f.text_field :name, placeholder: "name" %>
+      <%= f.text_field :name, placeholder: "name" , required: true %>
     </div>
     <div>
       <%= f.label :icon %>
-      <%= f.file_field :icon %>
+      <%= f.file_field :icon , required: true %>
       </div>
     <div>
       <%= f.submit "Save" %>

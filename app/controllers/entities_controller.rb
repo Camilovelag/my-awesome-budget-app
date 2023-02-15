@@ -16,18 +16,15 @@ class EntitiesController < ApplicationController
     @entity = Entity.new(entity_params)
     @entity.author_id = current_user.id
     @groups_array = entity_group_params
-    if @entity.save
+    render :new unless @entity.save
+
+    if @groups_array.length > 1
       @groups_array.each do |group|
-        temp = EntityGroup.create(entity_id: @entity.id, group_id: group)
-        temp.save
+        EntityGroup.create(entity_id: @entity.id, group_id: group)
       end
+      redirect_to group_entities_path(params[:group_id]), notice: 'Transaction successfully created!'
     else
-      render :new
-    end
-    if @groups_array.empty?
-      render :new
-    else
-      redirect_to group_entities_path(@groups_array.first), notice: 'Transaction successfully created!'
+      redirect_to new_group_entity_path(params[:group_id]), alert: 'Please, add at least 1 category'
     end
   end
 
@@ -39,6 +36,6 @@ class EntitiesController < ApplicationController
 
   def entity_group_params
     @array = params.require(:entity_group).permit(group_id: [])
-    @array[:group_id].drop(1)
+    @array[:group_id]
   end
 end

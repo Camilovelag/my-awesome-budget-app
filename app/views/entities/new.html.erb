@@ -2,15 +2,15 @@
   <%= form_with model: @entity, url: group_entities_path, method: :post, local: true do |f| %>
     <div>
       <%= f.label :name %>
-      <%= f.text_field :name, placeholder: "name" %>
+      <%= f.text_field :name, placeholder: "name", required: true %>
     </div>
     <div>
       <%= f.label :amount %>
-      <%= f.number_field :amount, step: 0.01 %>
+      <%= f.number_field :amount, step: 0.01 , required: true %>
     </div>
     <div>
       <%= fields_for @entity_group do |item| %>
-        <%= item.collection_check_boxes :group_id, @groups, :id, :name, {required: true} do |c| %>
+        <%= item.collection_check_boxes :group_id, @groups, :id, :name, required: true do |c| %>
           <%= c.check_box %>
           <%= c.label %>
         <% end %>

@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to groups_path, notice: 'New category added!'
     else
-      redirect_to new_group_path, alert: 'Please, complete all the required fields'
+      render :new
     end
   end
 
