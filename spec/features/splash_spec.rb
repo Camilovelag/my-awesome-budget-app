@@ -14,18 +14,18 @@ RSpec.feature 'Splash', type: :feature do
       expect(page).to have_content('LOG IN')
     end
 
-    it 'redirects user to sign_up page' do
-      click_button 'SIGN UP'
-      expect(page).to have_current_path(new_user_registration_path)
-    end
-
     it 'shows a sign_up button' do
       expect(page).to have_content('SIGN UP')
     end
 
-    it 'redirects user to log_in page' do
+    it 'when clicks log_in button, redirects user to log_in page' do
       click_button 'LOG IN'
       expect(page).to have_current_path(new_user_session_path)
+    end
+
+    it 'when clicks sign_up button, redirects user to sign_up page' do
+      click_button 'SIGN UP'
+      expect(page).to have_current_path(new_user_registration_path)
     end
   end
 end
