@@ -10,7 +10,7 @@ html * {
 }
 
 .bg-main {
-  background-color: #3778c2;
+  background: linear-gradient(#3778c2, #4242a1);
 }
 
 .bg-second {
@@ -44,8 +44,15 @@ html * {
 }
 
 @media only screen and (min-width: 576px) {
-  .wxh-10 {
-    width: 10% !important;
-    height: 10% !important;
+  .wxh-sm-20 {
+    width: 20% !important;
+    height: 20% !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .wxh-md-15 {
+    width: 15% !important;
+    height: 15% !important;
   }
 }

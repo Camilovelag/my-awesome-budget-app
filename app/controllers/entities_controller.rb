@@ -26,7 +26,7 @@ class EntitiesController < ApplicationController
         temp = EntityGroup.new(entity_id: @entity.id, group_id: group)
         render :new unless temp.save
       end
-      redirect_to group_entities_path(params[:group_id]), notice: 'Transaction successfully created!'
+      redirect_to group_entities_path(@groups_array.first), notice: 'Transaction successfully created!'
     end
   end
 

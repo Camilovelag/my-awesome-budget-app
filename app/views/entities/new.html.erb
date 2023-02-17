@@ -16,11 +16,11 @@
         <% end %>
       <% end %>
     </div>
-    <div class="actions fixed-top-right pt-3">
-      <%= f.submit "Save", class:'btn bg-main text-light' %>
+    <div class="actions fixed-top-right p-2">
+      <%= f.submit "Save", class:'btn text-light' %>
     </div>
   <% end %>
-  <%= button_to group_entities_path(params[:group_id]), method: :get, class: 'btn fixed-top-left pt-3 btn-lg text-light' do %>
+  <%= button_to group_entities_path(params[:group_id]), method: :get, class: 'btn fixed-top-left btn-lg text-light' do %>
     <i class="bi bi-arrow-left"></i>
   <% end %>
 </div>

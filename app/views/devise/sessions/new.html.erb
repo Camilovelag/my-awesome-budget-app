@@ -9,14 +9,14 @@
     </div>
 
     <% if devise_mapping.rememberable? %>
-      <div class="field">
+      <div class="field my-2 mx-3">
         <%= f.check_box :remember_me %>
         <%= f.label :remember_me %>
       </div>
     <% end %>
 
-    <div class="actions fixed-top-right pt-3">
-      <%= f.submit "Log in", class:'btn bg-main text-light' %>
+    <div class="actions fixed-top-right p-2">
+      <%= f.submit "Log in", class:'btn text-light' %>
     </div>
   <% end %>
   <div class="mt-2 text-center">
