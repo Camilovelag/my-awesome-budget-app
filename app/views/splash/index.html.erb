@@ -1,3 +1,9 @@
-<h1>My awesome budget app</h1>
-<%= button_to 'LOG IN', new_user_session_path, method: :get %>
-<%= button_to 'SIGN UP', new_user_registration_path, method: :get %>
+<main class='container-fluid d-flex flex-column align-items-center vh-100'>
+  <div class='d-flex align-items-center justify-content-center flex-fill'>
+    <h1 class='font-billabong'>My awesome budget app</h1>
+  </div>
+  <div class='d-flex flex-column w-100 p-4 gap-2'>
+    <%= button_to 'LOG IN', new_user_session_path, method: :get, class: 'btn btn-primary w-100' %>
+    <%= button_to 'SIGN UP', new_user_registration_path, method: :get, class: 'btn btn-light w-100' %>
+  </div>
+</main>

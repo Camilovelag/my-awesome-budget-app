@@ -1,3 +1,26 @@
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+@import url('https://fonts.cdnfonts.com/css/billabong');
+
+html * {
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+.font-billabong {
+  font-family: 'Billabong', sans-serif;
+}
+
 .w-10 {
   width: 10%;
+}
+
+.bg-main {
+  background-color: #3778c2;
+}
+
+.bg-second {
+  background-color: #5fb523;
+}
+
+.text-color {
+  color: #434b54;
 }
