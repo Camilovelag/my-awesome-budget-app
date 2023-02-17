@@ -1,0 +1,58 @@
+@import url('https://fonts.cdnfonts.com/css/proxima-nova-2');
+@import url('https://fonts.cdnfonts.com/css/billabong');
+
+html * {
+  font-family: 'Proxima Nova', sans-serif;
+}
+
+.font-billabong {
+  font-family: 'Billabong', sans-serif;
+}
+
+.bg-main {
+  background: linear-gradient(#3778c2, #4242a1);
+}
+
+.bg-second {
+  background-color: #5fb523;
+}
+
+.text-color {
+  color: #434b54;
+}
+
+.bg-gray {
+  background-color: #ddd;
+}
+
+.fixed-top-right {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1030;
+}
+
+.fixed-top-left {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.link-unset {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 576px) {
+  .wxh-sm-20 {
+    width: 20% !important;
+    height: 20% !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .wxh-md-15 {
+    width: 15% !important;
+    height: 15% !important;
+  }
+}
