@@ -1,7 +1,7 @@
 <div class='d-flex flex-column align-items-center mt-2'>
   <%= form_with model: @group, url: groups_path, method: :post, local: true do |f| %>
     <div>
-      <%= f.text_field :name, placeholder: "name" , required: true, placeholder: 'Category name', class: 'form-control vw-100' %>
+      <%= f.text_field :name, placeholder: " Category name" , required: true, class: 'form-control vw-100' %>
     </div>
     <div class="form-control vw-100 d-flex flex-column flex-sm-row text-secondary">
       <%= f.label :icon, 'Add an image to the new category (mandatory).' %>

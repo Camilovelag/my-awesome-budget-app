@@ -8,13 +8,13 @@ RSpec.describe 'User', type: :feature do
     end
 
     it 'should display a sign_up page' do
-      expect(page).to have_content('Sign up')
+      expect(page).to have_content('REGISTER')
     end
 
     it 'should allow user to register in the app' do
-      fill_in 'Username', with: 'User'
+      fill_in 'Full name', with: 'User'
       fill_in 'Email', with: 'user@example.com'
-      fill_in 'Password', with: '123456'
+      fill_in 'Password (6 characters minimum)', with: '123456'
       fill_in 'Password confirmation', with: '123456'
       click_button 'Sign up'
       sleep(1)
@@ -32,7 +32,7 @@ RSpec.describe 'User', type: :feature do
     end
 
     it 'should display a log_in page' do
-      expect(page).to have_content('Log in')
+      expect(page).to have_content('LOGIN')
     end
 
     it 'should allow user to log into the app' do
