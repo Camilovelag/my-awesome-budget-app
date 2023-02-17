@@ -16,8 +16,11 @@
     <% end %>
 
     <div class="actions fixed-top-right pt-3">
-      <%= f.submit "LOG IN", class:'btn bg-main text-light' %>
+      <%= f.submit "Log in", class:'btn bg-main text-light' %>
     </div>
   <% end %>
+  <div class="mt-2 text-center">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
 
-  <%= render "devise/shared/links" %>
