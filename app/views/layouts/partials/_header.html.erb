@@ -1,8 +1,10 @@
-<% if current_user %>
-  <header class='fixed-top'>
-    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
-      <i class="bi bi-list"></i>
-    </button>
+<% unless controller.controller_name == 'splash' %>
+  <header class='d-flex justify-content-center bg-main text-light pt-3'>
+    <% if current_user %>
+      <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop">
+        <i class="bi bi-list"></i>
+      </button>
+    <% end %>
     <h1>
       <%= page_title %>
     </h1>

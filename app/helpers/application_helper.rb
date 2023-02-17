@@ -9,6 +9,10 @@ module ApplicationHelper
       'NEW TRANSACTION'
     when %w[entities index]
       'TRANSACTIONS'
+    when %w[registrations new]
+      'REGISTER'
+    when %(sessions new)
+      'LOG IN'
     end
   end
 end

@@ -24,3 +24,7 @@ html * {
 .text-color {
   color: #434b54;
 }
+
+.bg-gray {
+  background-color: #ddd;
+}
