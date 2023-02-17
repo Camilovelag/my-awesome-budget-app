@@ -18,8 +18,10 @@
       <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Password confirmation', class: 'form-control vw-100' %>
     </div>
 
-    <div class="actions bg-second vw-100 p-2 mt-3">
-      <%= f.submit "SIGN UP", class:'btn w-100 text-light border border-light' %>
+    <div class="actions fixed-top-right pt-3">
+      <%= f.submit "SIGN UP", class:'btn bg-main text-light' %>
     </div>
   <% end %>
+
+  <%= render "devise/shared/links" %>
 </div>

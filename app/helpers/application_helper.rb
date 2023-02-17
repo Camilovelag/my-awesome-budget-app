@@ -11,8 +11,8 @@ module ApplicationHelper
       'TRANSACTIONS'
     when %w[registrations new]
       'REGISTER'
-    when %(sessions new)
-      'LOG IN'
+    when %w[sessions new]
+      'LOGIN'
     end
   end
 end
