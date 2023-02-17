@@ -9,10 +9,6 @@ html * {
   font-family: 'Billabong', sans-serif;
 }
 
-.w-10 {
-  width: 10%;
-}
-
 .bg-main {
   background-color: #3778c2;
 }
@@ -41,4 +37,15 @@ html * {
   top: 0;
   left: 0;
   z-index: 1030;
+}
+
+.link-unset {
+  text-decoration: none;
+}
+
+@media only screen and (min-width: 576px) {
+  .wxh-10 {
+    width: 10% !important;
+    height: 10% !important;
+  }
 }

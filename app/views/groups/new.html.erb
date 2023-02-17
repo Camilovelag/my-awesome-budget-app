@@ -3,12 +3,12 @@
     <div>
       <%= f.text_field :name, placeholder: "name" , required: true, placeholder: 'Category name', class: 'form-control vw-100' %>
     </div>
-    <div class="form-control vw-100 d-flex">
-      <%= f.label :icon, 'Add an image to the new category (mandatory)' %>
+    <div class="form-control vw-100 d-flex flex-column flex-sm-row text-secondary">
+      <%= f.label :icon, 'Add an image to the new category (mandatory).' %>
       <%= f.file_field :icon , required: true, class: 'btn' %>
       </div>
-    <div class="actions bg-second vw-100 p-2 mt-3">
-      <%= f.submit "SAVE", class:'btn w-100 text-light border border-light' %>
+    <div class="actions fixed-top-right pt-3">
+      <%= f.submit "Save", class:'btn bg-main text-light' %>
     </div>
   <% end %>
   <%= button_to groups_path, method: :get, class: 'btn fixed-top-left pt-3 btn-lg text-light' do %>
