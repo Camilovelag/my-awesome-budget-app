@@ -180,6 +180,7 @@ If you like this project please give it a ⭐️!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
+All the design credits go to [Gregoire Vella on Behance](https://www.behance.net/gregoirevella).
 Thank you to microverse for setting us on this journey.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
