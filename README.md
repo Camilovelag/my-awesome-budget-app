@@ -70,6 +70,14 @@ Built with Ruby on Rails
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Live Demo <a name="live-demo"></a>
+
+- [Live Demo](https://my-awesome-budget-app.onrender.com/)
+
+- [Video](https://www.loom.com/share/16970fdcf7714c83977212d83df9e0a3)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
