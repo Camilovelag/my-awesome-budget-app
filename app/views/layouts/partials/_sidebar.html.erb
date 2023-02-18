@@ -10,7 +10,8 @@
       </p>
       <p>
         <%= current_user.email if current_user%>
-      <p>
+      </p>
+      <%= button_to 'logout', destroy_user_session_path, method: :delete, class: 'btn text-light text-decoration-underline' %>
     </div>
   </div>
 </aside>

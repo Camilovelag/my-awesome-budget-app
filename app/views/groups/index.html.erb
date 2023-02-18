@@ -1,6 +1,6 @@
 <ul class="d-flex flex-column vw-100 p-0">
   <% @groups.each do |group| %>
-    <%= link_to group_entities_path(group.id), method: :post, class:'link-unset' do %>
+    <%= link_to group_entities_path(group.id), method: :post, class: 'text-decoration-none' do %>
       <li class="d-flex gap-2 m-2 p-2 bg-light text-dark border rounded">
         <%= image_tag url_for(group.icon), class: 'img-thumbnail wxh-sm-20 wxh-md-15 w-25 h-25' %>
         <div class="d-flex align-items-center flex-fill justify-content-between">
