@@ -1,0 +1,17 @@
+<aside class="offcanvas offcanvas-start bg-main" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title font-billabong h1 text-light" id="staticBackdropLabel">My awesome budget app</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body text-center text-light pt-5">
+    <div>
+      <p>
+        <%= current_user.name if current_user %>
+      </p>
+      <p>
+        <%= current_user.email if current_user%>
+      </p>
+      <%= button_to 'logout', destroy_user_session_path, method: :delete, class: 'btn text-light text-decoration-underline' %>
+    </div>
+  </div>
+</aside>

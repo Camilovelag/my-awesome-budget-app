@@ -1,0 +1,28 @@
+<div class='d-flex flex-column align-items-center'>
+  <div class="d-flex vw-100 px-2 py-3 justify-content-between bg-light">
+    <p class="m-0 text-secondary">
+      Total ammount:
+    </p>
+    <strong>
+      <%= total_amount_per_transaction(@entities) %>
+    </strong>
+  </div>
+  <ul class="d-flex flex-column vw-100 p-0 mt-2">
+    <% @entities.each do |entity| %>
+      <li class="d-flex gap-2 m-2 p-2 bg-light text-dark border rounded align-items-center justify-content-between">
+        <p class="m-0 text-secondary">
+          <%= entity.name %>
+        </p>
+        <strong class="py-4">
+          <%= number_to_currency(entity.amount) %>
+        </strong>
+      </li>
+    <% end %>
+  </ul>
+  <div class="actions bg-second vw-100 p-2 fixed-bottom">
+    <%= button_to 'Add a new transaction', new_group_entity_path, method: :get, class:'btn w-100 text-light border border-light' %>
+  </div>
+  <%= button_to groups_path, method: :get, class: 'btn fixed-top-left btn-lg text-light' do %>
+    <i class="bi bi-arrow-left"></i>
+  <% end %>
+</div>

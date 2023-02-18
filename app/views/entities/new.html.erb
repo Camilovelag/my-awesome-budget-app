@@ -1,0 +1,26 @@
+<div class='d-flex flex-column align-items-center mt-2'>
+  <%= form_with model: @entity, url: group_entities_path, method: :post, local: true do |f| %>
+    <div>
+      <%= f.text_field :name, placeholder: "name", required: true, placeholder: 'Transaction name', class: 'form-control vw-100'  %>
+    </div>
+    <div>
+      <%= f.number_field :amount, step: 0.01 , required: true, placeholder: 'Amount', class: 'form-control vw-100' %>
+    </div>
+    <div class='d-flex flex-column w-50 py-2 px-4 gap-1'>
+      <%= fields_for @entity_group do |item| %>
+        <%= item.collection_check_boxes :group_id, @groups, :id, :name, required: true do |c| %>
+          <div>
+            <%= c.check_box %>
+            <%= c.label %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <div class="actions fixed-top-right p-2">
+      <%= f.submit "Save", class:'btn text-light' %>
+    </div>
+  <% end %>
+  <%= button_to group_entities_path(params[:group_id]), method: :get, class: 'btn fixed-top-left btn-lg text-light' do %>
+    <i class="bi bi-arrow-left"></i>
+  <% end %>
+</div>

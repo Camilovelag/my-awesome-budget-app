@@ -1,0 +1,17 @@
+<div class='d-flex flex-column align-items-center mt-2'>
+  <%= form_with model: @group, url: groups_path, method: :post, local: true do |f| %>
+    <div>
+      <%= f.text_field :name, placeholder: " Category name" , required: true, class: 'form-control vw-100' %>
+    </div>
+    <div class="form-control vw-100 d-flex flex-column flex-sm-row text-secondary">
+      <%= f.label :icon, 'Add an image to the new category (mandatory).' %>
+      <%= f.file_field :icon , required: true, class: 'btn' %>
+      </div>
+    <div class="actions fixed-top-right p-2">
+      <%= f.submit "Save", class:'btn text-light' %>
+    </div>
+  <% end %>
+  <%= button_to groups_path, method: :get, class: 'btn fixed-top-left btn-lg text-light' do %>
+    <i class="bi bi-arrow-left"></i>
+  <% end %>
+</div>

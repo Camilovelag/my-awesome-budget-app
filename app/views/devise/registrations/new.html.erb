@@ -1,0 +1,30 @@
+<div class='d-flex flex-column align-items-center mt-2'>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.text_field :name, autofocus: true, autocomplete: "name", placeholder: 'Full name', class: 'form-control vw-100' %>
+    </div>
+
+    <div class="field">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'form-control vw-100' %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password (#{ @minimum_password_length if @minimum_password_length } characters minimum)", class: 'form-control vw-100' %>
+    </div>
+
+    <div class="field">
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: 'Password confirmation', class: 'form-control vw-100' %>
+    </div>
+
+    <div class="actions fixed-top-right p-2">
+      <%= f.submit "Sign up", class:'btn text-light' %>
+    </div>
+  <% end %>
+  
+  <div class="mt-2 text-center">
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
+
